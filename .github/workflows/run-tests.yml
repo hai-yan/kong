@@ -32,15 +32,13 @@ jobs:
     - name: Run Test Suite 1
       run: |
         echo "Running Test Suite 1 on localhost"
-        env:
-          SUITE: services
+        export SUITE=services
         npm run test-services
 
     - name: Run Test Suite 2
       run: |
         echo "Running Test Suite 2 on localhost"
-        env:
-          SUITE: routes
+        export SUITE=routes
         npm run test-routes
         
     - name: List files
