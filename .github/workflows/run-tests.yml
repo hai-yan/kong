@@ -1,0 +1,40 @@
+name: Run Tests
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # 每半小时运行一次
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Compose
+      run: docker-compose up -d
+
+    - name: Get Docker Container IP
+      id: get_ip
+      run: |
+        CONTAINER_ID=$(docker ps -q)
+        IP_ADDRESS=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $CONTAINER_ID)
+        echo "IP_ADDRESS=$IP_ADDRESS" >> $GITHUB_ENV
+
+    - name: Run Test Suite 1
+      run: |
+        echo "Running Test Suite 1 on ${{ env.IP_ADDRESS }}"
+        # Replace with actual test command
+        ./run_tests.sh --suite=suite1 --server=${{ env.IP_ADDRESS }}
+
+    - name: Run Test Suite 2
+      run: |
+        echo "Running Test Suite 2 on ${{ env.IP_ADDRESS }}"
+        # Replace with actual test command
+        ./run_tests.sh --suite=suite2 --server=${{ env.IP_ADDRESS }}
+
+    - name: Send Email with Results
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_a
