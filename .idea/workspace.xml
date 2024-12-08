@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e36253df-72dd-426f-8af3-6b80f3ff7109" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/data/paths.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/flows/workspaces/gateway-services.flow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/flows/workspaces/routes.flow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/flows/workspaces/workspaces.flow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/pages/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/pages/workspaces/gateway-services.page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/pages/workspaces/routes.page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/pages/workspaces/workspaces.page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/db-framework/db-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/db-framework/postgres-util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/playwright.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests-examples/demo-todo-app.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/workspaces/gateway-services.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/workspaces/routes.spec.js" afterDir="false" />
-    </list>
+    <list default="true" id="e36253df-72dd-426f-8af3-6b80f3ff7109" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +33,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Kally/Repo/ptaas/tests-playwright",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

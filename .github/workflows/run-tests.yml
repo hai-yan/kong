@@ -1,0 +1,61 @@
+name: Run Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v2
+
+    - name: Install Docker Compose
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y docker-compose
+        
+    - name: Set up Docker Compose
+      run: docker-compose up -d
+      
+    - name: Install Modules For Tests
+      run:  |
+        echo "Installing modules for tests"
+        npm install
+        sudo npx playwright install-deps  
+        npx playwright install        
+      
+    - name: Run Test Suite 1
+      run: |
+        echo "Running Test Suite 1 on localhost"
+        npm run test-services
+
+    - name: Run Test Suite 2
+      run: |
+        echo "Running Test Suite 2 on localhost"
+        npm run test-routes
+        
+    - name: Upload report as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: report
+        path: playwright-report/index.html
+
+    - name: Send Email with Results
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.163.com
+        server_port: 465
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: Test Suite Results
+        to: suqianqian_qq@163.com
+        from: suqianqian_qq@163.com
+        attachments: playwright-report/index.html
+        body: |
+          Test Suite 1 and 2 have completed.
+          Check the logs for detailed results
