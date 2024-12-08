@@ -32,11 +32,13 @@ jobs:
     - name: Run Test Suite 1
       run: |
         echo "Running Test Suite 1 on localhost"
+        export suite=services
         npm run test-services
 
     - name: Run Test Suite 2
       run: |
         echo "Running Test Suite 2 on localhost"
+        export suite=routes
         npm run test-routes
         
     - name: List files
@@ -46,7 +48,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: report
-        path: playwright-report/index.html
+        path: playwright-report/**/index.html
 
     - name: Send Email with Results
       uses: dawidd6/action-send-mail@v3
@@ -58,7 +60,7 @@ jobs:
         subject: Test Suite Results
         to: suqianqian_qq@163.com
         from: suqianqian_qq@163.com
-        attachments: playwright-report/index.html
+        attachments: playwright-report/**/index.html
         body: |
           Test Suite 1 and 2 have completed.
           Check the logs for detailed results
