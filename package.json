@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test-services": "npx playwright test workspaces/gateway-services.spec.js --reporter=list",
-    "test-routes": "npx playwright test workspaces/routes.spec.js --reporter=list"
+    "test-services": "npx playwright test workspaces/gateway-services.spec.js",
+    "test-routes": "npx playwright test workspaces/routes.spec.js"
   },
   "keywords": [],
   "author": "",
