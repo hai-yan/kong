@@ -32,12 +32,12 @@ jobs:
     - name: Run Test Suite 1
       run: |
         echo "Running Test Suite 1 on localhost"
-        npm run test-services
+        npx playwright test workspaces/routes.spec.js
 
     - name: Run Test Suite 2
       run: |
         echo "Running Test Suite 2 on localhost"
-        npm run test-routes
+        npx playwright test workspaces/gateway-services.spec.js
         
     - name: List files
       run: ls -R playwright-report 
