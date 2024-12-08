@@ -39,10 +39,13 @@ jobs:
       run: |
         echo "Running Test Suite 2 on localhost"
         export suite=routes
+        export
         npm run test-routes
         
     - name: List files
-      run: ls -R playwright-report 
+      run: | 
+        export
+        ls -R playwright-report 
       
     - name: Upload report as artifact
       uses: actions/upload-artifact@v3
